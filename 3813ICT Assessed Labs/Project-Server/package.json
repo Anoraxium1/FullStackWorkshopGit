@@ -1,0 +1,26 @@
+{
+  "name": "project-server",
+  "version": "1.0.0",
+  "description": "This is to write what your server does",
+  "keywords": [
+    "Server"
+  ],
+  "homepage": "https://github.com/Anoraxium1/FullStackWorkshopGit#readme",
+  "bugs": {
+    "url": "https://github.com/Anoraxium1/FullStackWorkshopGit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anoraxium1/FullStackWorkshopGit.git"
+  },
+  "license": "ISC",
+  "author": "Lachlan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

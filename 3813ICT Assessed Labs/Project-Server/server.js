@@ -10,6 +10,10 @@ let server = http.listen(3000, function () {
     console.log("Server listening on: " + host + " port: " + port);
 });
 
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/www/login.html');
+});
+
 app.get('/test', function (req, res) {
-    res.sendFile(__dirname + '/www/test.html');
+   res.sendFile(__dirname + '/www/account.html');
 });

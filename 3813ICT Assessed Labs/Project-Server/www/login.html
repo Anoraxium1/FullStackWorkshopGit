@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css.css">
+
 <h1> Login Page </h1>
 
 <form action="/login" method="POST">
@@ -11,3 +13,28 @@
     <br>
     <button type="submit">Login</button>
 </form>
+
+<div id="errormsg" class="hidemessage">User credentials do not match</div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        fetch('/login/attempt', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'email=' + email + '&password=' + password
+        })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+            if (data.ok) {
+                window.location.href = '/account';
+            } else {
+                document.getElementById('errormsg').className = 'showmessage';
+            }
+        });
+    });
+</script>
